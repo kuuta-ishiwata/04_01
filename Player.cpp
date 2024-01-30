@@ -6,7 +6,7 @@ Player::Player() { Initialize();}
 
 void Player::Initialize()
 { 
-	Pos_ = {40.0f, 200.0f};
+	Pos_ = {50.0f, 200.0f};
 	speed_ = 3.0f;
 }
 
@@ -15,7 +15,7 @@ void Player::Update(){}
 
 void Player::Draw()
 {
-	Novice::DrawEllipse((int)Pos_.x, (int)Pos_.y, 8, 8, 0.0f, WHITE, kFillModeSolid);
+	Novice::DrawEllipse((int)Pos_.x, (int)Pos_.y, 16, 16, 0.0f, WHITE, kFillModeSolid);
 
 }
 
