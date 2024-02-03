@@ -1,24 +1,34 @@
 ﻿#pragma once
 #include "Vector2.h"
+#include"PlayerBullet.h"
+#include<memory>
+#include<list>
 
 class Player {
 
 public:
-	Player();
+	~Player();
 
-	void Initialize();
+	void Initialize(const char* keys, const char* preKeys);
 	void Update();
 	void Draw();
+	void Attack();
 
-	void RightMove();
-	void LeftMove();
-	void UpMove();
-	void DownMove();
+	const std::list<PlayerBullet*>& GetBullet() const { return playerbullets_; }
+
+	Vector2 GetPosition();
+
+	
 
 
 private:
 
 	Vector2 Pos_;
 	float speed_;
+	Vector2 radius_;
+	const char* keys_;
+	const char* preKeys_;
+	std::list<PlayerBullet*> playerbullets_;
+
 
 };
